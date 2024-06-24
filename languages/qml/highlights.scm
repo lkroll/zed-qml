@@ -62,6 +62,7 @@
   "if"
   "let"
   "else"
+  "function"
 ] @keyword
 
 ;;; Comments
@@ -111,3 +112,8 @@
 
 (variable_declarator
     name: (identifier) @variable.parameter)
+
+;;; Function declaration
+
+(function_declaration
+    name: (identifier) @function.method)
