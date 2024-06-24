@@ -21,11 +21,9 @@
     (nested_identifier (identifier) @property)
   ])
 
-;; locals query appears not working unless id: <ref> isn't a parameter.
 (ui_binding
   name: (identifier) @property
-  (#eq? @property "id")
-  value: (expression_statement (identifier) @variable.parameter))
+  value: (expression_statement (_) @variable.parameter))
 
 (ui_property
   name: (identifier) @property)
@@ -35,6 +33,10 @@
 
 (ui_list_property_type
   ["<" ">"] @punctuation.bracket)
+
+(ui_object_definition
+    type_name: (_) @property
+    (#match? @property "^[a-z].*"))
 
 ;;; Signals
 
@@ -57,4 +59,49 @@
   "readonly"
   "required"
   "signal"
+  "if"
+  "let"
+  "else"
 ] @keyword
+
+;;; Comments
+
+(comment) @comment
+
+;;; Type identifier
+
+(type_identifier) @type
+
+;;; Literals
+
+(number) @number
+(string) @string
+(true) @boolean
+(false) @boolean
+
+;;; Operators
+
+(unary_expression "!" @operator)
+(binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!="] @operator)
+(ternary_expression ["?" ":"] @operator)
+
+;;; Object definitions
+
+(ui_object_definition
+    type_name: (_) @function.method
+    (#match? @function.method "^[A-Z].*"))
+
+;;; Property identifier
+
+(property_identifier) @function.method
+
+;;; Expressions
+
+(member_expression
+    object: (identifier) @variable.parameter)
+
+(assignment_expression
+    left: (identifier) @variable.parameter)
+
+(expression_statement
+    (identifier) @variable.paremeter)
