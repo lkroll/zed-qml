@@ -105,3 +105,9 @@
 
 (expression_statement
     (identifier) @variable.paremeter)
+
+(binary_expression
+    (identifier) @variable.parameter)
+
+(variable_declarator
+    name: (identifier) @variable.parameter)
