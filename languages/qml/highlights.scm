@@ -105,7 +105,7 @@
     left: (identifier) @variable.parameter)
 
 (expression_statement
-    (identifier) @variable.paremeter)
+    (identifier) @variable.parameter)
 
 (binary_expression
     (identifier) @variable.parameter)
@@ -113,7 +113,10 @@
 (variable_declarator
     name: (identifier) @variable.parameter)
 
-;;; Function declaration
+;;; Functions
 
 (function_declaration
     name: (identifier) @function.method)
+
+(call_expression
+    function: (identifier) @function.method.call)
