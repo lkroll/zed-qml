@@ -94,7 +94,14 @@
 
 ;;; Property identifier
 
-(property_identifier) @function.method
+(property_identifier) @property
+
+;;; Function calls
+
+(call_expression
+  function: (member_expression
+    property: (property_identifier) @function.method.call)
+)
 
 ;;; Expressions
 
