@@ -86,12 +86,6 @@
 (binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!="] @operator)
 (ternary_expression ["?" ":"] @operator)
 
-;;; Object definitions
-
-(ui_object_definition
-    type_name: (_) @function.method
-    (#match? @function.method "^[A-Z].*"))
-
 ;;; Property identifier
 
 (property_identifier) @property
