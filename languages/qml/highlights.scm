@@ -1,3 +1,7 @@
+;;; Variables
+
+(identifier) @variable
+
 ;;; Annotations
 
 (ui_annotation
@@ -73,7 +77,7 @@
 
 (comment) @comment
 
-;;; Type identifier
+;;; Types
 
 (type_identifier) @type
 
@@ -98,35 +102,16 @@
 (binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!=" "||" "!=="] @operator)
 (ternary_expression ["?" ":"] @operator)
 
-;;; Property identifier
+;;; Property identifiers
 
 (property_identifier) @property
 
-;;; Function calls
+;;; Functions
 
 (call_expression
   function: (member_expression
     property: (property_identifier) @function.method.call)
 )
-
-;;; Expressions
-
-(member_expression
-    object: (identifier) @variable.parameter)
-
-(assignment_expression
-    left: (identifier) @variable.parameter)
-
-(expression_statement
-    (identifier) @variable.parameter)
-
-(binary_expression
-    (identifier) @variable.parameter)
-
-(variable_declarator
-    name: (identifier) @variable.parameter)
-
-;;; Functions
 
 (function_declaration
     name: (identifier) @function.method)
