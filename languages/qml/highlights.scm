@@ -63,6 +63,7 @@
   "let"
   "else"
   "function"
+  "return"
 ] @keyword
 
 ;;; Comments
@@ -83,7 +84,7 @@
 ;;; Operators
 
 (unary_expression "!" @operator)
-(binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!="] @operator)
+(binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!=" "||" "!=="] @operator)
 (ternary_expression ["?" ":"] @operator)
 
 ;;; Property identifier
