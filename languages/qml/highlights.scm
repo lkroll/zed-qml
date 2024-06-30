@@ -64,6 +64,9 @@
   "else"
   "function"
   "return"
+  "var"
+  "for"
+  "while"
 ] @keyword
 
 ;;; Comments
@@ -78,8 +81,16 @@
 
 (number) @number
 (string) @string
-(true) @boolean
-(false) @boolean
+
+[
+  (true)
+  (false)
+] @boolean
+
+[
+  (null)
+  (undefined)
+] @constant.builtin
 
 ;;; Operators
 
