@@ -1,10 +1,14 @@
 name = "QML"
 grammar = "qmljs"
 path_suffixes = ["qml"]
-line_comments = ["//"]
-block_comment = ["/*", "*/"]
+line_comments = ["// "]
+block_comment = ["/* ", " */"]
 brackets = [
     { start = "{", end = "}", close = true, newline = true },
     { start = "[", end = "]", close = true, newline = true },
     { start = "(", end = ")", close = true, newline = true },
+    { start = "/*", end = " */", close = true, newline = false, not_in = [
+        "comment",
+        "string",
+    ] },
 ]
