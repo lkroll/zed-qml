@@ -50,7 +50,7 @@
 (ui_signal_parameter
   (identifier) @variable.parameter)
 
-;;; Keywords
+;;; QML Keywords
 
 [
   "as"
@@ -63,14 +63,49 @@
   "readonly"
   "required"
   "signal"
-  "if"
-  "let"
+] @keyword
+
+;;; JavaScript Keywords
+
+[
+  "async"
+  "await"
+  "break"
+  "case"
+  "catch"
+  "class"
+  "const"
+  "continue"
+  "debugger"
+  "delete"
+  "do"
   "else"
-  "function"
-  "return"
-  "var"
+  "export"
+  "extends"
+  "finally"
   "for"
+  "from"
+  "function"
+  "get"
+  "if"
+  "in"
+  "instanceof"
+  "let"
+  "new"
+  "of"
+  "return"
+  "set"
+  "static"
+  "switch"
+  "target"
+  "throw"
+  "try"
+  "typeof"
+  "var"
+  "void"
   "while"
+  "with"
+  "yield"
 ] @keyword
 
 ;;; Comments
@@ -98,8 +133,53 @@
 
 ;;; Operators
 
-(unary_expression "!" @operator)
-(binary_expression [">" "<" "<=" ">=" "&&" "==" "===" "&" "!=" "||" "!=="] @operator)
+[
+  "-"
+  "--"
+  "-="
+  "+"
+  "++"
+  "+="
+  "*"
+  "*="
+  "**"
+  "**="
+  "/"
+  "/="
+  "%"
+  "%="
+  "<"
+  "<="
+  "<<"
+  "<<="
+  "="
+  "=="
+  "==="
+  "!"
+  "!="
+  "!=="
+  "=>"
+  ">"
+  ">="
+  ">>"
+  ">>="
+  ">>>"
+  ">>>="
+  "~"
+  "^"
+  "&"
+  "|"
+  "^="
+  "&="
+  "|="
+  "&&"
+  "||"
+  "??"
+  "&&="
+  "||="
+  "??="
+] @operator
+
 (ternary_expression ["?" ":"] @operator)
 
 ;;; Property identifiers
