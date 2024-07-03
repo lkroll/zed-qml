@@ -59,7 +59,6 @@
 (call_expression
     function: (identifier) @function.method.call)
 
-
 ;;; Signals
 
 (ui_signal
