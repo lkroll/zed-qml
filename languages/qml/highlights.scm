@@ -42,6 +42,24 @@
     type_name: (_) @property
     (#match? @property "^[a-z].*"))
 
+;;; Property identifiers
+
+(property_identifier) @property
+
+;;; Functions
+
+(call_expression
+  function: (member_expression
+    property: (property_identifier) @function.method.call)
+)
+
+(function_declaration
+    name: (identifier) @function.method)
+
+(call_expression
+    function: (identifier) @function.method.call)
+
+
 ;;; Signals
 
 (ui_signal
@@ -118,6 +136,9 @@
 
 ;;; Literals
 
+(this) @variable.special
+(super) @variable.special
+
 (number) @number
 (string) @string
 
@@ -130,6 +151,27 @@
   (null)
   (undefined)
 ] @constant.builtin
+
+(escape_sequence) @string.escape
+
+;;; Punctuation
+
+[
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
+]  @punctuation.bracket
+
+[
+  ";"
+  "?."
+  "."
+  ","
+  ":"
+] @punctuation.delimiter
 
 ;;; Operators
 
@@ -181,20 +223,3 @@
 ] @operator
 
 (ternary_expression ["?" ":"] @operator)
-
-;;; Property identifiers
-
-(property_identifier) @property
-
-;;; Functions
-
-(call_expression
-  function: (member_expression
-    property: (property_identifier) @function.method.call)
-)
-
-(function_declaration
-    name: (identifier) @function.method)
-
-(call_expression
-    function: (identifier) @function.method.call)
