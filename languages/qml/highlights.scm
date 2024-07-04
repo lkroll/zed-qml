@@ -1,3 +1,7 @@
+;;; Snippets based on:
+;;; https://github.com/yuja/tree-sitter-qmljs/blob/master/queries/highlights.scm
+;;; https://github.com/zed-industries/zed/blob/main/crates/languages/src/javascript/highlights.scm
+
 ;;; Variables
 
 (identifier) @variable
