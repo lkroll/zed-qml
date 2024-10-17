@@ -1,10 +1,14 @@
 id = "qml"
 name = "QML"
-version = "0.0.1"
+version = "0.0.2"
 schema_version = 1
 authors = ["Lennart Kroll <24440161+lkroll@users.noreply.github.com>"]
 description = "QML support."
 repository = "https://github.com/lkroll/zed-qml"
+
+[language_servers.qmljs]
+name = "QML LSP"
+language = "QML"
 
 [grammars.qmljs]
 repository = "https://github.com/yuja/tree-sitter-qmljs"
