@@ -1,0 +1,13 @@
+[package]
+name = "zed_qmljs"
+version = "0.0.2"
+edition = "2021"
+publish = false
+license = "GPL-3.0-or-later"
+
+[dependencies]
+zed_extension_api = "0.1.0"
+
+[lib]
+path = "src/qmljs.rs"
+crate-type = ["cdylib"]

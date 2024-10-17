@@ -12,3 +12,8 @@ QML language support for Zed
 ## Tree-sitter Grammar
 
 - https://github.com/yuja/tree-sitter-qmljs
+
+## qmlls (LSP)
+
+The `qmlls` binary should be installed locally from your QT install.
+See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configurtion.
