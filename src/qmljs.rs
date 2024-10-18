@@ -22,7 +22,11 @@ impl QmlJsExtension {
             }
         }
 
-        let binary_path = format!("/usr/bin/qmlls");
+        let mut binary_path = format!("/usr/bin/qmlls");
+
+        if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
+            binary_path = format!("/usr/bin/qmlls6");
+        }
 
         if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
             zed::set_language_server_installation_status(
