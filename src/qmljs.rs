@@ -26,15 +26,14 @@ impl QmlJsExtension {
 
         if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
             binary_path = format!("/usr/bin/qmlls6");
-        }
-
-        if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
-            zed::set_language_server_installation_status(
-                language_server_id,
-                &zed::LanguageServerInstallationStatus::Failed(
-                    "qmlls is not installed locally".to_string(),
-                ),
-            );
+            if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
+                zed::set_language_server_installation_status(
+                    language_server_id,
+                    &zed::LanguageServerInstallationStatus::Failed(
+                        "qmlls is not installed locally".to_string(),
+                    ),
+                );
+            }
         }
 
         self.cached_binary_path = Some(binary_path.clone());
