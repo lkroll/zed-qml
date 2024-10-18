@@ -16,4 +16,24 @@ QML language support for Zed
 ## qmlls (LSP)
 
 The `qmlls` binary should be installed locally from your QT install.
-See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configurtion.
+See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configuration.
+
+### Installation
+
+#### Ubuntu
+
+```bash
+sudo apt install qt6-declarative-dev-tools
+```
+
+#### Fedora
+
+```bash
+sudo dnf install qt6-qtdeclarative-devel
+```
+
+#### Arch
+
+```bash
+sudo pacman -S qt6-declarative
+```
