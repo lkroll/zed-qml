@@ -22,7 +22,8 @@ See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configu
 
 #### MacOS
 
-Make sure you have qmlls in your $PATH. If you have installed Qt using the online installer you may need to do that manually.  
+Make sure you have `qmlls` available in your `$PATH`. If you have installed Qt using the online installer you may need to do that manually.
+
 The simplest way to achieve that is by adding this line at the end of your .zshrc file:
 
 ```bash
