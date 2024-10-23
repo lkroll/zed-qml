@@ -20,19 +20,34 @@ See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configu
 
 ### Installation
 
-#### Ubuntu
+#### MacOS
+
+Make sure you have qmlls in your $PATH. If you have installed Qt using the online installer you may need to do that manually.  
+The simplest way to achieve that is by adding this line at the end of your .zshrc file:
+
+```bash
+export PATH=$PATH:/Users/$USER/Qt/6.8.0/macos/bin
+```
+
+This assumes the version of Qt you have installed is 6.8.0.
+
+#### Linux
+
+On Linux in most cases you can just install qmlls by using your package manger.
+
+##### Ubuntu
 
 ```bash
 sudo apt install qt6-declarative-dev-tools
 ```
 
-#### Fedora
+##### Fedora
 
 ```bash
 sudo dnf install qt6-qtdeclarative-devel
 ```
 
-#### Arch
+##### Arch
 
 ```bash
 sudo pacman -S qt6-declarative
