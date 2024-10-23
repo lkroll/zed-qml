@@ -1,6 +1,6 @@
 id = "qml"
 name = "QML"
-version = "0.0.2"
+version = "0.0.3"
 schema_version = 1
 authors = ["Lennart Kroll <24440161+lkroll@users.noreply.github.com>"]
 description = "QML support."
