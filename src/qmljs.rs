@@ -26,7 +26,7 @@ impl QmlJsExtension {
         }
 
         Err(
-            "qmlls binary not found in $PATH. Make sure you have a working QT installation on your system.\nCheck the install instructions on Github for further information: https://github.com/lkroll/zed-qml?tab=readme-ov-file#qmlls-lsp"
+            "qmlls binary not found in $PATH. Make sure you have a working Qt installation on your system.\nCheck the install instructions on Github for further information: https://github.com/lkroll/zed-qml?tab=readme-ov-file#qmlls-lsp"
                 .to_owned(),
         )
     }
