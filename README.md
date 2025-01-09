@@ -53,3 +53,27 @@ sudo dnf install qt6-qtdeclarative-devel
 ```bash
 sudo pacman -S qt6-declarative
 ```
+
+##### Void Linux
+
+```bash
+sudo xbps-install qt6-declarative-tools
+```
+
+Void installs `qmlls` to `/usr/lib/qt6/bin/qmlls` so you either need to symlink it to `/usr/bin/qmlls` or just add it to your `$PATH` like so:
+
+```bash
+echo "export PATH=\$PATH:/usr/lib/qt6/bin" >> ~/.bashrc
+```
+
+### Configure Build Directory
+
+For qmlls to recognize your QML modules you have to specify the build directory of your project.
+The simplest way to do that is by specifying it in a file called `.qmlls.ini` in your project root like so:
+
+```ini
+[General]
+buildDir=path/to/build/dir
+```
+
+Then after building your project once all errors regarding "module not found" should be resolved.
