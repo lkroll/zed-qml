@@ -66,6 +66,21 @@ Void installs `qmlls` to `/usr/lib/qt6/bin/qmlls` so you either need to symlink 
 echo "export PATH=\$PATH:/usr/lib/qt6/bin" >> ~/.bashrc
 ```
 
+### Configure LSP Arguments
+For qmlls to recognize modules in your `QML_IMPORT_PATH` you can add the `-E` argument to your settings like so:
+
+```json
+{
+  "lsp": {
+    "qml": {
+      "binary": {
+        "arguments": ["-E", "additional-args"]
+      }
+    }
+  }
+}
+```
+
 ### Configure Build Directory
 
 For qmlls to recognize your QML modules you have to specify the build directory of your project.
