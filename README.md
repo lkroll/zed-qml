@@ -5,20 +5,23 @@ QML language support for Zed
 
 ## Features
 
-- Syntax highlighting (includes JS used in QML files)
+By leveraging [qml-js tree-sitter](https://github.com/yuja/tree-sitter-qmljs),
+the extension provides:
+
+- Syntax highlighting (including JS used in QML files)
 - Outline support for UI components and functions
 - Automatic indenting and auto closing brackets, strings etc.
 
-## Tree-sitter Grammar
+## Installation
 
-- https://github.com/yuja/tree-sitter-qmljs
+zed-qml is available in the Extension Gallery.
+See [Zed documentation](https://zed.dev/docs/extensions/installing-extensions) for more info.
 
-## qmlls (LSP)
+## Dependencies
 
-The `qmlls` binary should be installed locally from your QT install.
-See [this documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configuration.
+### qmlls (LSP)
 
-### Installation
+The `qmlls` binary should be installed locally from your Qt install.
 
 #### MacOS
 
@@ -66,8 +69,13 @@ Void installs `qmlls` to `/usr/lib/qt6/bin/qmlls` so you either need to symlink 
 echo "export PATH=\$PATH:/usr/lib/qt6/bin" >> ~/.bashrc
 ```
 
-### Configure LSP Arguments
-For qmlls to recognize modules in your `QML_IMPORT_PATH` you can add the `-E` argument to your settings like so:
+## Configuration
+
+See [Qt documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configuration.
+
+### Configure LSP
+
+For qmlls to recognize modules in your `QML_IMPORT_PATH`, you can add the `-E` argument to your Zed settings like so:
 
 ```json
 {
@@ -81,9 +89,9 @@ For qmlls to recognize modules in your `QML_IMPORT_PATH` you can add the `-E` ar
 }
 ```
 
-### Configure Build Directory
+### Configure build directory
 
-For qmlls to recognize your QML modules you have to specify the build directory of your project.
+For qmlls to recognize your QML modules, you have to specify the build directory of your project.
 The simplest way to do that is by specifying it in a file called `.qmlls.ini` in your project root like so:
 
 ```ini
