@@ -19,7 +19,7 @@ See [Zed documentation](https://zed.dev/docs/extensions/installing-extensions) f
 
 ## Dependencies
 
-### qmlls (LSP)
+### QML Language Server (qmlls)
 
 The `qmlls` binary should be installed locally from your Qt install.
 
@@ -69,11 +69,11 @@ Void installs `qmlls` to `/usr/lib/qt6/bin/qmlls` so you either need to symlink 
 echo "export PATH=\$PATH:/usr/lib/qt6/bin" >> ~/.bashrc
 ```
 
-## Configuration
+## Language Server Configuration
 
-See [Qt documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html#configuration-file) for configuration.
+See [Qt documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html) for configuration.
 
-### Configure LSP
+### Extra Arguments
 
 For qmlls to recognize modules in your `QML_IMPORT_PATH`, you can add the `-E` argument to your Zed settings like so:
 
@@ -89,7 +89,7 @@ For qmlls to recognize modules in your `QML_IMPORT_PATH`, you can add the `-E` a
 }
 ```
 
-### Configure build directory
+### Configure Build Directory
 
 For qmlls to recognize your QML modules, you have to specify the build directory of your project.
 The simplest way to do that is by specifying it in a file called `.qmlls.ini` in your project root like so:
