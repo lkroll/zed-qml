@@ -54,7 +54,7 @@ sudo dnf install qt6-qtdeclarative-devel
 ##### Arch
 
 ```bash
-sudo pacman -S qt6-declarative
+sudo pacman -S qt6-languageserver
 ```
 
 ##### Void Linux
